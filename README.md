@@ -11,7 +11,65 @@ A simple Planning Poker application with the following features:
 - **Reveal Cards**: Display all votes simultaneously
 - **Reset Voting**: Start a new voting round
 
-## Running with Docker
+## Release to Docker Hub
+
+### 1. Build the Docker image
+
+```bash
+docker build -t your-dockerhub-username/planning-poker:latest .
+```
+
+### 2. Login to Docker Hub
+
+```bash
+docker login
+```
+
+### 3. Push the image to Docker Hub
+
+```bash
+docker push your-dockerhub-username/planning-poker:latest
+```
+
+### 4. (Optional) Tag and push a specific version
+
+```bash
+docker tag your-dockerhub-username/planning-poker:latest your-dockerhub-username/planning-poker:v1.0.0
+docker push your-dockerhub-username/planning-poker:v1.0.0
+```
+
+## Running from Docker Hub (on server)
+
+### Pull and run the application
+
+```bash
+    docker pull your-dockerhub-username/planning-poker:latest
+docker run -d -p 3000:3000 --name planning-poker your-dockerhub-username/planning-poker:latest
+```
+
+### Or use docker-compose.yml
+
+Create a `docker-compose.yml` file:
+
+```yaml
+version: '3.8'
+services:
+  planning-poker:
+    image: your-dockerhub-username/planning-poker:latest
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+```
+
+Then run:
+
+```bash
+docker-compose up -d
+```
+
+The application will be available at: http://localhost:3000
+
+## Running with Docker (local development)
 
 ```bash
 docker compose up -d --build
