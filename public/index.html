@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planning Poker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Home Screen -->
+        <div id="home-screen" class="screen active">
+            <div class="container">
+                <h1>🃏 Planning Poker</h1>
+                <button id="create-room-btn" class="btn btn-primary">Vytvořit nový stůl</button>
+            </div>
+        </div>
+
+        <!-- Join Screen -->
+        <div id="join-screen" class="screen">
+            <div class="container">
+                <h1>🃏 Planning Poker</h1>
+                <h2>Připojit se ke stolu</h2>
+
+                <div class="form-group">
+                    <label for="player-name">Tvoje jméno:</label>
+                    <input type="text" id="player-name" placeholder="Zadej jméno" maxlength="20">
+                </div>
+
+                <div class="form-group">
+                    <label>Vyber si avatar (Pepe):</label>
+                    <div class="avatar-grid" id="avatar-grid">
+                        <div class="avatar-option" data-avatar="😀">😀</div>
+                        <div class="avatar-option" data-avatar="😎">😎</div>
+                        <div class="avatar-option" data-avatar="🤓">🤓</div>
+                        <div class="avatar-option" data-avatar="😴">😴</div>
+                        <div class="avatar-option" data-avatar="🤔">🤔</div>
+                        <div class="avatar-option" data-avatar="😅">😅</div>
+                        <div class="avatar-option" data-avatar="🥳">🥳</div>
+                        <div class="avatar-option" data-avatar="😤">😤</div>
+                        <div class="avatar-option" data-avatar="🤩">🤩</div>
+                        <div class="avatar-option" data-avatar="🧐">🧐</div>
+                        <div class="avatar-option" data-avatar="😱">😱</div>
+                        <div class="avatar-option" data-avatar="🤯">🤯</div>
+                    </div>
+                </div>
+
+                <button id="join-btn" class="btn btn-primary" disabled>Připojit se</button>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen">
+            <div class="container">
+                <div class="game-header">
+                    <h1>🃏 Planning Poker</h1>
+                    <div class="room-info">
+                        <span>Kód místnosti: <strong id="room-code"></strong></span>
+                        <button id="copy-link-btn" class="btn btn-small">📋 Kopírovat odkaz</button>
+                    </div>
+                </div>
+
+                <div class="players-section">
+                    <h2>Hráči</h2>
+                    <div id="players-list" class="players-list"></div>
+                </div>
+
+                <div class="voting-section">
+                    <h2>Vyber kartu</h2>
+                    <div class="cards-container">
+                        <div class="card" data-value="0.1">0.1</div>
+                        <div class="card" data-value="0.25">0.25</div>
+                        <div class="card" data-value="0.5">0.5</div>
+                        <div class="card" data-value="1">1</div>
+                        <div class="card" data-value="2">2</div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button id="reveal-btn" class="btn btn-secondary">Odhalit karty</button>
+                    <button id="reset-btn" class="btn btn-secondary">Nové hlasování</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
