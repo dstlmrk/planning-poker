@@ -1,49 +1,49 @@
 # Planning Poker Application
 
-Jednoduchá aplikace pro Planning Poker s následujícími funkcemi:
+A simple Planning Poker application with the following features:
 
-## Funkce
+## Features
 
-- **Karty**: 0.1, 0.25, 0.5, 1, 2
-- **Vytvoření stolu**: Vytvoří unikátní URL pro pozvání dalších hráčů
-- **Výběr avatara**: Hráči si vyberou emoji avatar (Pepe style)
-- **Real-time hlasování**: WebSocket komunikace pro okamžitou aktualizaci
-- **Odhalení karet**: Zobrazení všech hlasů současně
-- **Reset hlasování**: Nové kolo hlasování
+- **Cards**: 0.1, 0.25, 0.5, 1, 2, 4
+- **Create Table**: Creates a unique URL to invite other players
+- **Avatar Selection**: Players choose a Pepe emoji avatar
+- **Real-time Voting**: WebSocket communication for instant updates
+- **Reveal Cards**: Display all votes simultaneously
+- **Reset Voting**: Start a new voting round
 
-## Spuštění pomocí Docker
+## Running with Docker
 
 ```bash
 docker compose up -d --build
 ```
 
-Aplikace bude dostupná na: http://localhost:3000
+The application will be available at: http://localhost:3000
 
-## Spuštění bez Dockeru
+## Running without Docker
 
-1. Nainstalujte závislosti:
+1. Install dependencies:
 ```bash
 npm install
 ```
 
-2. Spusťte server:
+2. Start the server:
 ```bash
 npm start
 ```
 
-Aplikace bude dostupná na: http://localhost:3000
+The application will be available at: http://localhost:3000
 
-## Použití
+## Usage
 
-1. Otevřete http://localhost:3000
-2. Klikněte na "Vytvořit nový stůl"
-3. Zadejte své jméno a vyberte avatar
-4. Zkopírujte odkaz a sdílejte ho s ostatními hráči
-5. Všichni hráči vyberou kartu
-6. Klikněte na "Odhalit karty" pro zobrazení výsledků
-7. Klikněte na "Nové hlasování" pro další kolo
+1. Open http://localhost:3000
+2. Click "Create New Table"
+3. Enter your name and select an avatar
+4. Copy the link and share it with other players
+5. All players select a card
+6. Click "Reveal Cards" to display results
+7. Click "New Vote" to start another round
 
-## Technologie
+## Technology Stack
 
 - **Backend**: Node.js, Express, WebSocket (ws)
 - **Frontend**: Vanilla JavaScript, HTML5, CSS3
